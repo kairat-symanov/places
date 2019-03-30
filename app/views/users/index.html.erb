@@ -1,0 +1,24 @@
+<h1>Пользователи</h1>
+
+<%= link_to 'Добавить пользователя', new_user_path %>
+
+<table>
+  <tr>
+    <td>Аватар</td>
+    <td>Имя пользователя</td>
+    <td colspan="3">Действие</td>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%#= user.image %></td>
+    <td><%= user.name %></td>
+    <td>
+      <%= link_to 'Смотреть', user_path(user) %>
+      <%= link_to 'Изменить', edit_user_path(user) %>
+      <%= link_to 'Удалить', user_path(user), method: :delete, 
+                           data: {confirm: 'Вы действительно хотите удалить этого пользователя?'} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+

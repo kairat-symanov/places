@@ -1,0 +1,21 @@
+<%= form_with model: @user, local: true do |f| %>
+  <% if @user.errors.any? %>
+    <div class="errors"> 
+      Errors:  <%= @user.errors.count %>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Имя пользователя' %>
+  </div><br>
+  
+  <div class="action">
+    <%= f.submit 'Подтвердить', class: 'ui dividing header' %>
+  </div>
+<% end %>
+
