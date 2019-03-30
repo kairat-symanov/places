@@ -1,0 +1,28 @@
+<h1>Заведения</h1>
+
+<%= link_to 'Добавить заведение', new_place_path %>
+
+<table>
+  <tr>
+    <td>Фото</td>
+    <td>Название заведения</td>
+    <td>Категория</td>
+    <td>Описание</td>
+    <td colspan="3">Действие</td>
+  </tr>
+  <% @places.each do |place| %>
+  <tr>
+    <td><%#= place.image %></td>
+    <td><%= place.name %></td>
+    <td><%= place.category %></td>
+    <td><%= place.description %></td>
+    <td>
+      <%= link_to 'Смотреть', place_path(place) %>
+      <%= link_to 'Изменить', edit_place_path(place) %>
+      <%= link_to 'Удалить', place_path(place), method: :delete, 
+                           data: {confirm: 'Вы действительно хотите удалить это заведение?'} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+

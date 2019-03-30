@@ -1,0 +1,29 @@
+<%= form_with model: @place, local: true do |f| %>
+  <% if @place.errors.any? %>
+    <div class="errors"> 
+      Errors:  <%= @place.errors.count %>
+        <ul>
+          <% @place.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Название' %>
+  </div><br>
+
+  <div class="field">
+    <%= f.text_field :category, placeholder: 'Категория' %>
+  </div><br>
+
+  <div class="field" style="with: 300px">
+    <%= f.text_area :description, :class => "tinymce", placeholder: 'Описание' %>
+  </div><br>
+
+  <div class="action">
+    <%= f.submit 'Подтвердить', class: 'ui dividing header' %>
+  </div>
+<% end %>
+
