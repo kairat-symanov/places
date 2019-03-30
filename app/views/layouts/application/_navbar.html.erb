@@ -11,7 +11,6 @@
           <%= link_to 'Категории', categories_path, :class => "text-light" %>&nbsp;&nbsp;
         </strong>
 
-
         </ul>
       <div class="navbar-nav ml-auto">
           <div class="navbar-nav ml-auto">
@@ -25,15 +24,11 @@
                 <%= link_to current_user.name, edit_user_registration_path(current_user), 
                 class: 'btn btn-primary dropdown-toggle', 'role' => "button", 'id' => "dropdownMenuLink", 
                 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false" %>
-
-                
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <%= link_to 'Редактировать профиль', edit_user_registration_path(current_user), class: 'dropdown-item' %>
                       <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                   </div>
-                <%= link_to 'Добавить заведение', new_place_path,
-                class: 'btn btn-primary', 'role' => "button" %>
-                    <div>
+                      <%= link_to 'Добавить заведение', new_place_path, class: 'btn btn-primary', 'role' => "button" %>                    
             <% else %>
                   <div class="nav-item">
                       <%= link_to 'Войти', new_user_session_path, class: 'nav-link' %>
