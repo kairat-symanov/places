@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     if @place.save
-      redirect_to places_path
+      redirect_to root_path
     else
       render :new
     end
@@ -34,7 +34,7 @@ class PlacesController < ApplicationController
 
   def destroy
     @place.destroy
-      redirect_to places_path
+      redirect_to root_path
   end
 
   private

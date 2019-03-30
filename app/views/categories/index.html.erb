@@ -1,0 +1,22 @@
+<h1>Категории</h1>
+
+<%= link_to 'Добавить категорию', new_category_path %>
+
+<table>
+  <tr>
+    <td>Название категории</td>
+    <td colspan="3">Действие</td>
+  </tr>
+  <% @categories.each do |category| %>
+  <tr>
+    <td><%= category.name %></td>
+    <td>
+      <%= link_to 'Смотреть', category_path(category) %>
+      <%= link_to 'Изменить', edit_category_path(category) %>
+      <%= link_to 'Удалить', category_path(category), method: :delete, 
+                           data: {confirm: 'Вы действительно хотите удалить эту категорию?'} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
