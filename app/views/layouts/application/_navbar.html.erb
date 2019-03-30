@@ -9,9 +9,17 @@
       <div class="navbar-nav ml-auto">
           <div class="navbar-nav ml-auto">
             <% if user_signed_in? %>
+            <div class="nav-item">
+              <span class="navbar-text">
+                Hello, &nbsp;
+              <span>
+            </div>
             <div class="dropdown show">
-                <%= link_to current_user.name, edit_user_registration_path(current_user), class: 'btn btn-primary dropdown-toggle', 'role' => "button", 'id' => "dropdownMenuLink", 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false" %>
+                <%= link_to current_user.name, edit_user_registration_path(current_user), 
+                class: 'btn btn-primary dropdown-toggle', 'role' => "button", 'id' => "dropdownMenuLink", 
+                'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false" %>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <%= link_to 'Редактировать профиль', edit_user_registration_path(current_user), class: 'dropdown-item' %>
                       <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                   </div>
                     <div>
