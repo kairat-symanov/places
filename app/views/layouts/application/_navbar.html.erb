@@ -5,7 +5,14 @@
             &#x2630;
         </button>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav"></ul>
+        <ul class="nav navbar-nav">
+
+        <strong>
+          <%= link_to 'Категории', categories_path, :class => "text-light" %>&nbsp;&nbsp;
+        </strong>
+
+
+        </ul>
       <div class="navbar-nav ml-auto">
           <div class="navbar-nav ml-auto">
             <% if user_signed_in? %>
@@ -18,10 +25,14 @@
                 <%= link_to current_user.name, edit_user_registration_path(current_user), 
                 class: 'btn btn-primary dropdown-toggle', 'role' => "button", 'id' => "dropdownMenuLink", 
                 'data-toggle' => "dropdown", 'aria-haspopup' => "true", 'aria-expanded' => "false" %>
+
+                
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <%= link_to 'Редактировать профиль', edit_user_registration_path(current_user), class: 'dropdown-item' %>
                       <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                   </div>
+                <%= link_to 'Добавить заведение', new_place_path,
+                class: 'btn btn-primary', 'role' => "button" %>
                     <div>
             <% else %>
                   <div class="nav-item">
