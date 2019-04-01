@@ -1,7 +1,5 @@
 <h1>Пользователи</h1>
 
-<%= link_to 'Добавить пользователя', new_user_path %>
-
 <table>
   <tr>
     <td>Аватар</td>
@@ -13,12 +11,14 @@
     <td><%#= user.image %></td>
     <td><%= user.name %></td>
     <td>
-      <%= link_to 'Смотреть', user_path(user) %>
-      <%= link_to 'Изменить', edit_user_path(user) %>
-      <%= link_to 'Удалить', user_path(user), method: :delete, 
+      <%= link_to 'Смотреть', user_path(user), class: "btn btn-outline-primary" %>
+      <%= link_to 'Изменить', edit_user_path(user), class: "btn btn-outline-warning" %>
+      <%= link_to 'Удалить', user_path(user), class: "btn btn-outline-danger", method: :delete, 
                            data: {confirm: 'Вы действительно хотите удалить этого пользователя?'} %>
     </td>
   </tr>
   <% end %>
-</table>
+</table><br>
+
+<%= link_to 'Назад', places_path, class: "btn btn-outline-info" %>
 

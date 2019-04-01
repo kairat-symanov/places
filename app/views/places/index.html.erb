@@ -11,13 +11,13 @@
   <% @places.each do |place| %>
   <tr>
     <td><%#= place.image %></td>
-    <td><%= place.name %></td>
+    <td><%= link_to place.name, place_path(place) %></td>
     <td><%= place.category %></td>
     <td><%= place.description %></td>
     <td>
-      <%= link_to 'Смотреть', place_path(place) %>
-      <%= link_to 'Изменить', edit_place_path(place) %>
-      <%= link_to 'Удалить', place_path(place), method: :delete, 
+      <%= link_to 'Смотреть', place_path(place), class: "btn btn-outline-primary" %>
+      <%= link_to 'Изменить', edit_place_path(place), class: "btn btn-outline-warning" %>
+      <%= link_to 'Удалить', place_path(place), class: "btn btn-outline-danger", method: :delete, 
                            data: {confirm: 'Вы действительно хотите удалить это заведение?'} %>
     </td>
   </tr>

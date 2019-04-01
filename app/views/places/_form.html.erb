@@ -26,8 +26,8 @@
     <%= f.text_area :description, :class => "tinymce", placeholder: 'Описание' %>
   </div><br>
 
-  <div class="action">
-    <%= f.submit 'Подтвердить', class: 'ui dividing header' %>
-  </div>
+  <button class="btn btn-primary" type="submit">
+    <%= f.submit 'Подтвердить' %>
+  </button>
 <% end %>
 <%= tinymce %>
